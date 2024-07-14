@@ -1,20 +1,20 @@
 import 'package:favorite_places_app_flutter/models/place.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+
 class UserPlacesNotifier extends StateNotifier<List<Place>> {
   UserPlacesNotifier() : super(const []);
 
   void addPlace(String title) {
     final newPlace = Place(title: title);
-
+    // updat  state add new state
     state = [newPlace, ...state];
 
   }
 
-  final userPlacesProveder = StateNotifierProvider(
-    (ref) => UserPlacesNotifier(),
-  );
-
-
   
 } 
+// this function for get this provider state rerun list 
+final userPlacesProveder = StateNotifierProvider<UserPlacesNotifier, List<Place>>(
+    (ref) => UserPlacesNotifier(),
+  );
