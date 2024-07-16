@@ -1,5 +1,6 @@
 
 
+import 'package:favorite_places_app_flutter/widgets/image_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:favorite_places_app_flutter/providers/user_places.dart';
@@ -54,6 +55,9 @@ class _AddPlaceScreenSteate extends ConsumerState<AddPlaceScreen> {
             controller: _titleControler,
             style: TextStyle(color: Theme.of(context).colorScheme.onBackground,),
             ),
+            // Image Input
+            const SizedBox(height: 10,),
+            ImageInput(),
             const SizedBox(height: 16,),
             ElevatedButton.icon( 
               onPressed: _savePlace,
